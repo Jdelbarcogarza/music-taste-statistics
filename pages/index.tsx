@@ -15,7 +15,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="flex items-center text-neutral-900">Tailwind CSS</h1>
+      
+      <body className="text-white text-4xl font-semibold">
+        <h1 className="px-16 py-64">musicstats.com</h1>
+        <button type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 mt-24 ml-28 mb-40">Log in with Spotify</button>
+
+      </body>
     </>
   );
 }
