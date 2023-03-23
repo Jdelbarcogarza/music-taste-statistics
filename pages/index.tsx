@@ -1,11 +1,49 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import { supabase } from "@/lib/supabaseInstance";
+import { useRouter } from "next/router";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Login() {
+  const router = useRouter();
+
+  async function retrieveSession() {
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    // si existe un usuario, redirigir a siguiente pantalla
+    if (user) {
+      router.push("/stats");
+    } else {
+      // UI feedback de que no se puedo loguear el usuario
+      console.log("no se pudo hacer login");
+    }
+  }
+
+  async function loginToSpotify() {
+    console.log("loggin in to spotify");
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "spotify",
+      options: {
+        scopes: "user-top-read",
+      },
+    });
+
+    if (error) {
+      console.log(error);
+      throw "hubo un error en el signing";
+    } else {
+
+      router.push("/stats");
+    }
+  }
+
   return (
     <>
       <Head>
@@ -16,6 +54,13 @@ export default function Home() {
       </Head>
 
       <h1 className="flex items-center text-neutral-900">Tailwind CSS</h1>
+      <button className="bg-orange-400" onClick={loginToSpotify}>
+        Spotify login
+      </button>
+
+      <button className="bg-blue-400" onClick={retrieveSession}>
+        GET SESSION
+      </button>
     </>
   );
 }
