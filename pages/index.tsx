@@ -22,26 +22,22 @@ export default function Login() {
     } else {
       // UI feedback de que no se puedo loguear el usuario
       console.log("no se pudo hacer login");
+      router.push("/");
     }
   }
 
   async function loginToSpotify() {
     console.log("loggin in to spotify");
 
-    const { error } = await supabase.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "spotify",
       options: {
         scopes: "user-top-read",
+        redirectTo: "http://localhost:3000/stats",
       },
     });
 
-    if (error) {
-      console.log(error);
-      throw "hubo un error en el signing";
-    } else {
 
-      router.push("/stats");
-    }
   }
 
   return (
