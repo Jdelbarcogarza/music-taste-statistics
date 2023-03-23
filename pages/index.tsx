@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
@@ -15,12 +14,63 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
-      <body className="text-white text-4xl font-semibold">
-        <h1 className="px-16 py-64">musicstats.com</h1>
-        <button type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 mt-24 ml-28 mb-40">Log in with Spotify</button>
-
-      </body>
+      <div className="home">
+        <img          
+          id="logo"
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img        
+          id="i-1"  
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img    
+          id="i-2"      
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img   
+          id="i-3"       
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img   
+          id="i-4"       
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img   
+          id="i-5"       
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img   
+          id="i-6" 
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <img   
+          id="i-7"       
+          className="h-auto max-w-xs"
+          src="img/logo.jpg"                    
+          alt="logo"
+        />
+        <button
+          id="login"
+          type="button"
+          className="rounded-lg bg-gray-800 px-5 py-2.5 text-sm font-medium text-white"
+        >
+          Log in with Spotify
+        </button>
+      </div>
     </>
   );
 }
