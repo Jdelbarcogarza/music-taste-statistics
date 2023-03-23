@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         data: { user },
       } = await supabase.auth.getUser();
       setSpotifyUserObject(() => user);
-      console.log("userr", user);
+      console.log("user", user);
     }
 
     getUserSession();
@@ -30,20 +30,21 @@ const Home: NextPage = () => {
       setAccessToken(data.session?.provider_token);
     }
 
+    
+
     getAccessToken();
+    // getTopTracks();
 
-    console.log("este es el user object", userSpotifyUserObject);
   }, [userSpotifyUserObject]);
+  // npx supabase gen types typescript --project-id xhoehsaspitgrwvrrlaj --schema public > types/supabase.ts
 
-  // useEffect(() => {
-  // });
   
   async function getTopTracks() {
     const { data, error } = await supabase.auth.getSession();
 
     const req = await axios.get("https://api.spotify.com/v1/me/top/tracks", {
       headers: {
-        Authorization: `Bearer ${data.session?.provider_token}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     });
 
@@ -51,8 +52,6 @@ const Home: NextPage = () => {
     setTopTracks(req.data.items);
 
   }
-  // npx supabase gen types typescript --project-id xhoehsaspitgrwvrrlaj --schema public > types/supabase.ts
-
 
   return (
     <div>
