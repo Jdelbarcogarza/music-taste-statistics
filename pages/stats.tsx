@@ -125,6 +125,11 @@ const Home: NextPage = () => {
 
   }
 
+  async function handleGraphics() {
+
+    router.push("/graphs");
+  }
+
 
   return (
     <>
@@ -163,7 +168,7 @@ const Home: NextPage = () => {
             <p className="text-xl">
               Get to know in detail the music that you listen to.
             </p>
-            <button className="w-fit place-self-center rounded-lg border-2 py-4 px-3">
+            <button  onClick={handleGraphics} className="w-fit place-self-center rounded-lg border-2 py-4 px-3">
               Know what you hear
             </button>
           </div>
