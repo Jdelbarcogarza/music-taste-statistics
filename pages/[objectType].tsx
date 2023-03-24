@@ -81,19 +81,19 @@ const moreObjects = () => {
     }
   }, [])
   
-  const Content = () => {}
+  // const Content = () => {}
   
-  if (objectType === "moreArtists") {
+  // if (objectType === "moreArtists") {
     
-    // componente que renderiza el contenido
-    Content = () => {
-      {topArtists.map((artist: any) => (
-        <Artist artist={artist} key={artist.id} />
-      ))}
-    };
-  }
+  //   // componente que renderiza el contenido
+  //   Content = () => {
+  //     {topArtists.map((artist: any) => (
+  //       <Artist artist={artist} key={artist.id} />
+  //     ))}
+  //   };
+  // }
 
-  return <div>{Content}</div>;
+  // return <div>{Content}</div>;
 };
 
 export default moreObjects;

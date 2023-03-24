@@ -16,6 +16,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   supabase: ^1.45.2
+  swiper: ^9.1.1
   tailwindcss: ^3.2.7
   typescript: 5.0.2
   zustand: ^4.3.6
@@ -31,6 +32,7 @@ dependencies:
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  swiper: 9.1.1
   typescript: 5.0.2
   zustand: 4.3.6_react@18.2.0
 
@@ -2558,6 +2560,10 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /stop-iteration-iterator/1.0.0:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
     engines: {node: '>= 0.4'}
@@ -2657,6 +2663,13 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /swiper/9.1.1:
+    resolution: {integrity: sha512-D1zArOwI6XCXCYBULPA4jTxpqp5SQtvntjinbXNZwXzj6P3KS51zSWuMarCLXq5oRISay4nX+TuShpxz8qhtbw==}
+    engines: {node: '>= 4.7.0'}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /synckit/0.8.5:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
