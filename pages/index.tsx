@@ -100,6 +100,7 @@ export default function Login() {
         <button
           id="login"
           type="button"
+          onClick={loginToSpotify}
           className="rounded-lg bg-gray-800 px-5 py-2.5 text-sm font-medium text-white"
         >
           Log in with Spotify
