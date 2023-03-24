@@ -34,24 +34,24 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     // listen for Swiper events using addEventListener
-    swiperElRefSongs.current.addEventListener("progress", (e) => {
-      const [swiper, progress] = e.detail;
-      // console.log(progress);
-    });
+    // swiperElRefSongs.current!.addEventListener("progress", (e) => {
+    //   const [swiper, progress] = e.detail;
+    //   // console.log(progress);
+    // })!;
 
-    swiperElRefSongs.current.addEventListener("slidechange", (e) => {
-      // console.log("slide changed");
-    });
+    // swiperElRefSongs.current!.addEventListener("slidechange", (e) => {
+    //   // console.log("slide changed");
+    // })!;
 
-    // listen for Swiper events using addEventListener
-    swiperElRefArtists.current.addEventListener("progress", (e) => {
-      const [swiper, progress] = e.detail;
-      // console.log(progress);
-    });
+    // // listen for Swiper events using addEventListener
+    // swiperElRefArtists.current!.addEventListener("progress", (e) => {
+    //   const [swiper, progress] = e.detail;
+    //   // console.log(progress);
+    // })!;
 
-    swiperElRefArtists.current.addEventListener("slidechange", (e) => {
-      // console.log("slide changed");
-    });
+    // swiperElRefArtists.current!.addEventListener("slidechange", (e) => {
+    //   // console.log("slide changed");
+    // });
 
     async function getUserSession() {
       const {
