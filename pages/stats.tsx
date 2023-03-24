@@ -127,7 +127,7 @@ const Home: NextPage = () => {
     <select
       id="time"
       value={artistsTimeFrame}
-      className="text-md rounded-lg bg-black"
+      className="text-md rounded-lg bg-transparent"
       onChange={(e) => setArtistTimeFrame(e.target.value)}
     >
       <option value="short_term">Last 4 weeks</option>
@@ -140,7 +140,7 @@ const Home: NextPage = () => {
     <select
       id="time"
       value={tracksTimeFrame}
-      className="text-md rounded-lg bg-black"
+      className="text-md rounded-lg bg-transparent"
       onChange={(e) => setTracksTimeFrame(e.target.value)}
     >
       <option value="short_term">Last 4 weeks</option>
