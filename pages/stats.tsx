@@ -111,6 +111,21 @@ const Home: NextPage = () => {
     getSpotifyData();
   }, [userSpotifyUserObject, artistsTimeFrame, tracksTimeFrame, accessToken]);
 
+  async function handleSeeMoreTracks() {
+
+
+    router.push("/tracks");
+
+  }
+
+  async function handleSeeMoreArtists() {
+
+
+    router.push("/artists");
+
+  }
+
+
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js" />
@@ -120,7 +135,7 @@ const Home: NextPage = () => {
           <div className="bg-teal-300">
             <div className="mb-3 flex items-end justify-between px-3">
               <p className="text-2xl">Artists</p>
-              <button className="pr-3 font-bold">See More</button>
+              <button className="pr-3 font-bold" onClick={handleSeeMoreArtists}>See More</button>
             </div>
             <swiper-container ref={swiperElRefSongs} slides-per-view="3">
               {topArtists.map((object: any) => (
@@ -134,7 +149,7 @@ const Home: NextPage = () => {
           <div className="bg-orange-400">
             <div className="mb-3 flex items-end justify-between px-3">
               <p className="text-2xl">Songs</p>
-              <button className="pr-3 font-bold">See More</button>
+              <button className="pr-3 font-bold" onClick={handleSeeMoreTracks}>See More</button>
             </div>
             <swiper-container ref={swiperElRefArtists} slides-per-view="3">
               {topTracks.map((object: any) => (
@@ -144,10 +159,14 @@ const Home: NextPage = () => {
               ))}
             </swiper-container>
           </div>
-        <div className="flex flex-col justify-center text-white px-4 space-y-3">
-          <p className="text-xl">Get to know in detail the music that you listen to.</p>
-          <button className="w-fit place-self-center border-2 rounded-lg py-4 px-3 border">Know what you hear</button>
-        </div>
+          <div className="flex flex-col justify-center space-y-3 px-4 text-white">
+            <p className="text-xl">
+              Get to know in detail the music that you listen to.
+            </p>
+            <button className="w-fit place-self-center rounded-lg border-2 py-4 px-3">
+              Know what you hear
+            </button>
+          </div>
         </div>
       </div>
     </>

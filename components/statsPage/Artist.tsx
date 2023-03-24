@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 
-const Artist = ({ artist, className }: { artist: any, className: string; }) => {
+const Artist = ({ artist, className }: { artist: any, className?: string; }) => {
 
   return (
     <div className={`flex flex-col items-center space-y-2 ${className}`} >
