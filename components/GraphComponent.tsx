@@ -1,4 +1,4 @@
-import { PureComponent } from "react";
+
 import { NextPage } from "next";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -27,7 +27,7 @@ const GraphComponent: NextPage<GraphProps> = ({ data, dataKey }) => {
         <Tooltip />
         <Legend />
         <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey={dataKey} fill="#8884d8" background={{ fill: '#eee' }} />
+        <Bar dataKey={dataKey} fill="#fcad03" background={{ fill: '#eee' }} />
       </BarChart>
     </div>
   )

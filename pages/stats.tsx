@@ -112,30 +112,61 @@ const Home: NextPage = () => {
   }, [userSpotifyUserObject, artistsTimeFrame, tracksTimeFrame, accessToken]);
 
   async function handleSeeMoreTracks() {
-
-
     router.push("/tracks");
-
   }
 
   async function handleSeeMoreArtists() {
-
-
     router.push("/artists");
-
   }
 
+  async function handleGraphics() {
+    router.push("/graphs");
+  }
+
+  const ArtistSelectTimeFrame = () => (
+    <select
+      id="time"
+      value={artistsTimeFrame}
+      className="text-md rounded-lg bg-black"
+      onChange={(e) => setArtistTimeFrame(e.target.value)}
+    >
+      <option value="short_term">Last 4 weeks</option>
+      <option value="medium_term">Last 6 months</option>
+      <option value="long_term">All time</option>
+    </select>
+  );
+
+  const TrackSelectTimeFrame = () => (
+    <select
+      id="time"
+      value={tracksTimeFrame}
+      className="text-md rounded-lg bg-black"
+      onChange={(e) => setTracksTimeFrame(e.target.value)}
+    >
+      <option value="short_term">Last 4 weeks</option>
+      <option value="medium_term">Last 6 months</option>
+      <option value="long_term">All time</option>
+    </select>
+  );
 
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js" />
-      <div className="h-screen">
-        <h1 className="text-3xl text-white">Your Music Stats</h1>
+      <div className="h-screen bg-black text-white">
+        <h1 className="bg-red-200 text-3xl">Your Music Stats</h1>
         <div className="flex h-5/6 flex-1 flex-col justify-around">
           <div>
-            <div className="mb-3 flex items-end justify-between px-3 text-white">
-              <p className="text-2xl">Artists</p>
-              <button className="pr-3 font-bold" onClick={handleSeeMoreArtists}>See More</button>
+            <div className="px-2">
+              <p className="pb-2 text-2xl">Artists</p>
+              <div className="mb-3 flex items-end justify-between">
+                <ArtistSelectTimeFrame />
+                <button
+                  className="pr-3 font-bold"
+                  onClick={handleSeeMoreArtists}
+                >
+                  See More
+                </button>
+              </div>
             </div>
             <swiper-container ref={swiperElRefSongs} slides-per-view="3">
               {topArtists.map((object: any) => (
@@ -147,9 +178,14 @@ const Home: NextPage = () => {
           </div>
 
           <div>
-            <div className="mb-3 flex items-end justify-between px-3">
-              <p className="text-2xl text-white">Songs</p>
-              <button className="pr-3 font-bold text-white" onClick={handleSeeMoreTracks}>See More</button>
+            <div className="px-2">
+            <p className="pb-2 text-2xl">Songs</p>
+            <div className="mb-3 flex items-end justify-between">
+              <TrackSelectTimeFrame />
+              <button className="pr-3 font-bold" onClick={handleSeeMoreTracks}>
+                See More
+              </button>
+            </div>
             </div>
             <swiper-container ref={swiperElRefArtists} slides-per-view="3">
               {topTracks.map((object: any) => (
@@ -163,7 +199,10 @@ const Home: NextPage = () => {
             <p className="text-xl">
               Get to know in detail the music that you listen to.
             </p>
-            <button className="w-fit place-self-center rounded-lg border-2 py-4 px-3">
+            <button
+              onClick={handleGraphics}
+              className="w-fit place-self-center rounded-lg border-2 py-4 px-3"
+            >
               Know what you hear
             </button>
           </div>
