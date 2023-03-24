@@ -32,7 +32,7 @@ export default function Login() {
       provider: "spotify",
       options: {
         scopes: "user-top-read",
-        redirectTo: process.env.NEXT_PUBLIC_VERCEL_URL ?? "http://localhost:3000/stats",
+        redirectTo: process.env.NEXT_PUBLIC_VERCEL_APP_URL ?? "http://localhost:3000/stats",
       },
     });
   }
