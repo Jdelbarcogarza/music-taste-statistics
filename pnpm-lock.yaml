@@ -35,8 +35,8 @@ dependencies:
   prop-types: 15.8.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  swiper: 9.1.1
   recharts: 2.5.0_v2m5e27vhdewzwhryxwfaorcca
+  swiper: 9.1.1
   typescript: 5.0.2
   zustand: 4.3.6_react@18.2.0
 
