@@ -93,7 +93,28 @@ body {
 .seccion-tracks-artistas {
     width: 100%;
     height: 100vh;
-    padding: 10px;
+    padding: 30px 10px;
+    overflow: scroll;
+}
+
+.seccion-tracks-artistas button {        
+    display: inline;    
+    color: white;
+    transition: 0.5s;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.seccion-tracks-artistas button img {
+    display: inline;    
+    margin: 0 2px;
+}
+
+.seccion-tracks-artistas button:hover,
+.seccion-tracks-artistas button:active {
+    text-decoration: underline;
 }
 
 .seccion-tracks-artistas .heading {
@@ -107,7 +128,7 @@ body {
 }
 
 .seccion-tracks-artistas .heading h1 {
-    font-size: 20px;
+    font-size: 20px;    
 }
 
 .seccion-tracks-artistas .imgs-container {
@@ -116,10 +137,14 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;    
     gap: 30px;         
+    color: white;
 }
 
 .seccion-tracks-artistas .imgs-container img {
     max-width: 120px;
     max-height: 120px;
-    margin: 0 auto;
+    margin: 0 auto;    
+    object-fit: cover;
 }
+
+/* Graficas */

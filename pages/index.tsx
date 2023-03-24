@@ -35,8 +35,6 @@ export default function Login() {
         redirectTo: "http://localhost:3000/stats",
       },
     });
-
-
   }
 
   return (

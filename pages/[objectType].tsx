@@ -64,6 +64,10 @@ const moreObjects = () => {
     console.log(topTracks.data.items);
   }
 
+  async function backButtonHandler() {
+    router.push("/stats");
+  }
+
   useEffect(() => {
     console.log("variable que pasoo", objectType);
     // si el user pidio mas artistas, entonces despliega eso, si no, entonces tracks.
@@ -74,21 +78,31 @@ const moreObjects = () => {
     }
   }, []);
 
-
-    return (
-      <div className="seccion-tracks-artistas">
-        <div className="heading">
-          <h1>{ objectType === "artists" ?  "Artistas" : "Tracks" }</h1>
-        </div>
-        <div className="imgs-container">
-           {objectType === "artists" ? topArtists.map((artist: any) => (
-            <Artist artist={artist} key={artist.id} />
-          )) : topTracks.map((track: any) => (
-            <Track key={track.id} track={track} />
-          ))}
-        </div>
+  return (
+    <div className="seccion-tracks-artistas">
+      <button className="rounded-lg" onClick={backButtonHandler}> 
+        <img 
+          src="img/flecha.png"
+          width={15}
+          height={15}
+          alt="Flecha"
+        />
+        Back
+      </button>
+      <div className="heading">
+        <h1>{objectType === "artists" ? "Artistas" : "Tracks"}</h1>
       </div>
-    );
+      <div className="imgs-container">
+        {objectType === "artists"
+          ? topArtists.map((artist: any) => (
+              <Artist artist={artist} key={artist.id} />
+            ))
+          : topTracks.map((track: any) => (
+              <Track key={track.id} track={track} />
+            ))}
+      </div>
+    </div>
+  );
 };
 
 export default moreObjects;

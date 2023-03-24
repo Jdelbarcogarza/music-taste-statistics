@@ -129,32 +129,32 @@ const Home: NextPage = () => {
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js" />
-      <div className="h-screen bg-black">
-        <h1 className="bg-red-200 text-3xl">Your Music Stats</h1>
+      <div className="h-screen">
+        <h1 className="text-3xl text-white">Your Music Stats</h1>
         <div className="flex h-5/6 flex-1 flex-col justify-around">
-          <div className="bg-teal-300">
-            <div className="mb-3 flex items-end justify-between px-3">
+          <div>
+            <div className="mb-3 flex items-end justify-between px-3 text-white">
               <p className="text-2xl">Artists</p>
               <button className="pr-3 font-bold" onClick={handleSeeMoreArtists}>See More</button>
             </div>
             <swiper-container ref={swiperElRefSongs} slides-per-view="3">
               {topArtists.map((object: any) => (
                 <swiper-slide key={object.id} className={""}>
-                  <Artist artist={object} className={"mx-2"} />
+                  <Artist artist={object} className={"mx-2 text-white"} />
                 </swiper-slide>
               ))}
             </swiper-container>
           </div>
 
-          <div className="bg-orange-400">
+          <div>
             <div className="mb-3 flex items-end justify-between px-3">
-              <p className="text-2xl">Songs</p>
-              <button className="pr-3 font-bold" onClick={handleSeeMoreTracks}>See More</button>
+              <p className="text-2xl text-white">Songs</p>
+              <button className="pr-3 font-bold text-white" onClick={handleSeeMoreTracks}>See More</button>
             </div>
             <swiper-container ref={swiperElRefArtists} slides-per-view="3">
               {topTracks.map((object: any) => (
                 <swiper-slide key={object.id} className={""}>
-                  <Track track={object} className={"mx-2"} />
+                  <Track track={object} className={"mx-2 text-white"} />
                 </swiper-slide>
               ))}
             </swiper-container>
