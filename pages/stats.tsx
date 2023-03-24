@@ -152,8 +152,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js" />
-      <div className="h-screen bg-black text-white">
-        <h1 className="bg-red-200 text-3xl">Your Music Stats</h1>
+      <div className="h-screen text-white">
+        <h1 className="text-3xl text-center">Your Music Stats</h1>
         <div className="flex h-5/6 flex-1 flex-col justify-around">
           <div>
             <div className="px-2">
