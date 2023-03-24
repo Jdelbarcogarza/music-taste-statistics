@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { supabase } from "@/lib/supabaseInstance";
+import Router, { useRouter } from "next/router";
 import axios from "axios";
 import ExampleGraph from "../components/GraphComponent";
 import GraphComponent from "../components/GraphComponent";
@@ -55,6 +56,9 @@ let data = [
 ];
 
 const Graphs: NextPage = () => {
+  // Router
+  const router = useRouter();
+
   // let dataGraph: any = []
   const [dataGraphDance, setDataDance] = useState(0);
   const [dataGraphEnergy, setDataEnergy] = useState(0);
@@ -112,19 +116,24 @@ const Graphs: NextPage = () => {
     getTopTracks();
   }, []);
 
+  async function backButtonHandler() {
+    router.push("/stats");
+  }
+
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        top: "0",
-        bottom: "0",
-        left: "0",
-        right: "0",
-        margin: "auto",
-      }}
-    >
+    <div className="graph-container">
+      <button className="rounded-lg" onClick={backButtonHandler}> 
+        <img 
+          src="img/flecha.png"
+          width={15}
+          height={15}
+          alt="Flecha"
+        />
+        Back
+      </button>
+      <div className="heading">
+        <h1>Graficas</h1>
+      </div>
       <GraphComponent data={dataGraphDance} dataKey="Danceability" />
       <GraphComponent data={dataGraphEnergy} dataKey="Energy" />
     </div>

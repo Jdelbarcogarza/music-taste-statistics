@@ -11,7 +11,7 @@ const GraphComponent: NextPage<GraphProps> = ({ data, dataKey }) => {
   return (
     <div>
       <BarChart
-        width={500}
+        width={370}
         height={300}
         data={data}
         margin={{
